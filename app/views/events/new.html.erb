@@ -1,0 +1,15 @@
+<h1>Add a new event:</h1>
+
+<%= form_with model: @event do |event_form| %>
+  <%= event_form.label :title %>
+  <%= event_form.text_field :title %>
+  <%= event_form.label :location %>
+  <%= event_form.text_area :location %>
+
+  <%= event_form.fields_for :attendance do |attendance_form|%>
+  <%= attendance_form.label :num_guests %>
+  <%= attendance_form.text_field :num_guests %>
+
+  <%end %>
+  <p><%= event_form.submit %></p>
+<% end %>
