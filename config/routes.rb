@@ -1,16 +1,12 @@
 Rails.application.routes.draw do
+
+  root 'static_pages#home'
   devise_for :users
-  resources :events do
-    resources :attendances
-  end
-  get '/user', to: 'users#show'
-
-
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  root "events#index"
-  devise_scope :user do
-    get 'users/sign_out' => 'devise/sessions#destroy'
-  end
+  get '/login',   to: 'sessions#new'
+  post '/login',  to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+  get '/signup',  to: 'users#new'
+  post '/signup', to: 'users#create'
+  resources :users,  only: [:new, :create, :show]
+  resources :events, only: [:new, :create, :show, :index]
 end

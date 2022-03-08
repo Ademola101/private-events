@@ -1,31 +1,33 @@
 class EventsController < ApplicationController
-  def index
-    @events = Event.all
-  end
 
   def new
     @event = Event.new
-    render :new
-  end
-
-
-  def show
-    @event = Event.find(params[:id])
   end
 
   def create
-    @event = current_user.events.build(event_params)
+    @event = current_user.organized_events.build(event_params)
     if @event.save
-      redirect_to action: "index"
+      flash[:success] = "Event created."
+      redirect_to current_user
     else
-      render :new
+      render 'new'
     end
   end
 
-  # Other controller actions go here.
+  def show
+    @event = Event.find_by(id: params[:id])
+    @attendees = @event.attendees
+    redirect_to root_url 
+  end
+
+  def index
+    @events = Event.all
+    redirect_to root_url
+  end
 
   private
     def event_params
-      params.require(:event).permit(:title, :location, attendances_attributes: [:num])
+      params.require(:event).permit(:title, :location, :date, :start_time)
     end
+
 end

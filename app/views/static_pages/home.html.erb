@@ -1,0 +1,25 @@
+<title>Private Events Home</title>
+<h1>Welcome to Private Events<% if logged_in? %>, <%= current_user.username %><% end %></h1>
+<div>
+	<% unless logged_in? %>
+		<p>Looking to sign up? <%= link_to 'Sign up here', signup_path %></p>
+		<p>Already a member? <%= link_to 'Log in here', login_path %></p>
+	<% else %>
+		<div>
+			<h3>Events you are hosting:</h3>
+			<% if current_user.organized_events.any? %>
+				<ul class = "events">
+				<% current_user.organized_events.sort.reverse.each do |event| %>
+					<li class="event">
+						<i>Event:</i> <%=  link_to "#{event.title}", event_path(:id => "#{event.id}") %>
+					</li>
+				<% end %>
+				</ul>
+			<% else %>
+				<p>You are not hosting any events.</p>
+			<% end %>
+		</div>
+	<% end %>
+
+	<p id="create_event_text">Planning your next event? <%= link_to "Create it here", new_event_path %></p>
+</div>
