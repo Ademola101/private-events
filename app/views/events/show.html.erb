@@ -10,6 +10,14 @@
   
   
 </ul>
+<h3>Event attendees:</h3>
+
+<ul>
+  <% @attendance.each do |a|  %>
+  <li> <%= a.email%> </li>
+  <% end %>
+</ul>
+
 
  <div><p> Register for this event</p>
  <div> <% if user_signed_in? %>
