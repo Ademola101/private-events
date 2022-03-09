@@ -1,8 +1,10 @@
 <%= form_with model: @attendance, url: {action: "create"} do |f| %>
   <%= f.fields_for :attendee, current_user do |builder| %>
     <fieldset>
-      <%= builder.label :email, "First Name" %><br />
+      <%= builder.label :email, "Email" %><br />
       <%= builder.text_field :email %><br />
+      <%= builder.label :id, "id" %><br />
+      <%= builder.text_field :id %><br />
     </fieldset>
   <% end %>
 
