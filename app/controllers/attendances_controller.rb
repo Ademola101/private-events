@@ -10,7 +10,7 @@ class AttendancesController < ApplicationController
   end
   def create
     @event = Event.find(params[:event_id])
-    @attendance = current_user.attendances.build(attendance_params)
+    @attendance = current_user.attendances.new(event_id: event.id, user_id: current_user.id)
     
     if @attendance.save
       render "events/index"
@@ -23,7 +23,7 @@ private
 
   def attendance_params
     params.require(:attendance)
-          .permit(:id, :num_guests, {user_attributes: [:id, :email]})
+          .permit(:id, :num_guests, {attendee_attributes: [:id, :email]})
   end
 
 end

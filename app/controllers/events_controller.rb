@@ -16,18 +16,15 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find_by(id: params[:id])
-    @attendees = @event.attendees
-    redirect_to root_url 
   end
 
   def index
     @events = Event.all
-    redirect_to root_url
   end
 
   private
     def event_params
-      params.require(:event).permit(:title, :location, :date, :start_time)
+      params.require(:event).permit(:title, :location)
     end
 
 end

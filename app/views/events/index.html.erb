@@ -1,6 +1,11 @@
 h1>Events</h1>
 
-<h3>Upcoming Events</h3>
+<% if @events%>
+<p> <% @events.each do |event| %> 
+<div>
+<p><strong> Event title: </strong> <%= link_to(event.title, event) %> </p>
+<p> <strong> Event location: </strong><%= event.location %> </p>
+<p> <strong> Created at: </strong><%= event.created_at %> </p>
 
   <ul class="events upcoming_events">
     <%= render @events.upcoming %>
