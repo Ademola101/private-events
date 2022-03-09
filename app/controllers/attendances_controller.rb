@@ -18,12 +18,13 @@ class AttendancesController < ApplicationController
       render :new
     end
   end
+  
 
 private
 
   def attendance_params
     params.require(:attendance)
-          .permit(:id, :num_guests, {attendee_attributes: [:id, :email]})
+          .permit( :num_guests)
   end
 
 end

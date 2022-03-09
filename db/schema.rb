@@ -26,6 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_09_094154) do
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.integer "organizer_id"
   end
 
