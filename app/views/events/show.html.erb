@@ -10,3 +10,11 @@
   
   
 </ul>
+
+ <div><p> Register for this event</p>
+ <div> <% if user_signed_in? %>
+
+ <%= button_to 'Register', attendance_path(@event), method: 'put' %>
+</div>
+<%end%>
+</div>

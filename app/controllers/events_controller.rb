@@ -18,6 +18,12 @@ class EventsController < ApplicationController
     @event = Event.find_by(id: params[:id])
   end
 
+  def attendance
+    @event = Event.find_by(params[:id])
+    Attendance.create(attendee_id: current_user.id, attended_event_id: @event.id, num_guests: 5)
+    redirect_to action: 'index'
+  end
+
   def index
     @events = Event.all
   end
