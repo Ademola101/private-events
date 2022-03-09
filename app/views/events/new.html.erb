@@ -1,15 +1,16 @@
-<h1>Add a new event:</h1>
+<h1><%= current_user.email %>, create a new event:</h1>
 
-<%= form_with model: @event do |event_form| %>
-  <%= event_form.label :title %>
-  <%= event_form.text_field :title %>
-  <%= event_form.label :location %>
-  <%= event_form.text_area :location %>
+<div class="form">
+  <%= form_for @event, url: {action: 'create'} do |f| %>
+    
 
-  <%= event_form.fields_for :attendance do |attendance_form|%>
-  <%= attendance_form.label :num_guests %>
-  <%= attendance_form.text_field :num_guests %>
+    <%= f.label :title %>
+    <%= f.text_field :title, autofocus: true %><br>
 
-  <%end %>
-  <p><%= event_form.submit %></p>
-<% end %>
+    <%= f.label :location %>
+    <%= f.text_field :location %><br>
+
+    <%= f.submit "Create Event" %>
+  <% end %>
+</div>
+<%= link_to "Back", current_user %>

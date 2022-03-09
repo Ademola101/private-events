@@ -2,7 +2,7 @@
 <% if @events%>
 <p> <% @events.each do |event| %> 
 <div>
-<p><strong> Event title: </strong> <%= event.title %> </p>
+<p><strong> Event title: </strong> <%= link_to(event.title, event) %> </p>
 <p> <strong> Event location: </strong><%= event.location %> </p>
 <p> <strong> Created at: </strong><%= event.created_at %> </p>
 

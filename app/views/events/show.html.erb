@@ -1,4 +1,12 @@
-<p>
-<%= @event.title%>
+<h1>Event Page: <%= @event.title %></h1>
 
-</p>
+<p>This event was created by <%= @event.organizer.email %>.</p>
+
+<h3>Event information:</h3>
+
+<ul>
+  <li><b>Event title:</b> <%= @event.title %></li>
+  <li><b>Event location:</b> <%= @event.location %></li>
+  
+  
+</ul>

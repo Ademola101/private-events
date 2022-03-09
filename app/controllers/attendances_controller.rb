@@ -10,7 +10,7 @@ class AttendancesController < ApplicationController
   end
   def create
     @event = Event.find(params[:event_id])
-    @attendance = current_user.attendances.build(attendance_params)
+    @attendance = current_user.attendances.new(attendance_params)
     
     if @attendance.save
       render "events/index"
