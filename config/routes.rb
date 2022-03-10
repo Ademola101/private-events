@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :events do
-      resources :attendances
+      resources :attendance do
+      end
   end
   get '/user', to: 'users#show'
   put "/event/:id/attendance", to: "events#attendance",as: "attendance"

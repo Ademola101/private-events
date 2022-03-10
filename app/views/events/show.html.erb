@@ -13,9 +13,12 @@
 <h3>Event attendees:</h3>
 
 <ul>
-  <% @attendance.each do |a|  %>
-  <li> <%= a.email%> </li>
-  <% end %>
+
+<div><% @attendee.each do |a| %> 
+<li> <%= a.email %> </li>
+<%end%>
+</div>
+
 </ul>
 
 
