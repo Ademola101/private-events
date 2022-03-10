@@ -1,5 +1,5 @@
-<p> These are the events you created</p>
- <div><% current_user.organized_events.each do |event|%> 
+<p> These are your events</p>
+ <div><% current_user.attended_events.each do |event|%> 
  <div>
  
 <div> Event title: <%= link_to event.title, event %>  </div>
