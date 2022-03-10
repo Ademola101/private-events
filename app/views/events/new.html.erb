@@ -9,6 +9,8 @@
 
     <%= f.label :location %>
     <%= f.text_field :location %><br>
+    <%= f.label :date %>
+    <%= f.date_field :date, Value: Date.current %><br>
 
     <%= f.submit "Create Event" %>
   <% end %>

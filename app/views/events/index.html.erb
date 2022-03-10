@@ -1,18 +1,32 @@
 
-<% if @events%>
-<p> <% @events.each do |event| %> 
+<% if upcommig_and_past(@events)%>
+<h1>Upcoming events</h1>
+<p> <% @events.upcoming.each do |event| %> 
 <div>
 <p><strong> Event title: </strong> <%= link_to(event.title, event) %> </p>
 <p> <strong> Event location: </strong><%= event.location %> </p>
+<p> <strong> Date of the event: </strong><%= event.date %> </p>
 <p> <strong> Created at: </strong><%= event.created_at %> </p>
 
 </div>
-
 <%end %>
+ <h1>Past events</h1>
+<p> <% @events.past.each do |event| %> 
+<div>
+<p><strong> Event title: </strong> <%= link_to(event.title, event) %> </p>
+<p> <strong> Event location: </strong><%= event.location %> </p>
+<p> <strong> Date of the event: </strong><%= event.date %> </p>
+<p> <strong> Created at: </strong><%= event.created_at %> </p>
+
+</div>
+<%end%>
 <%else%>
 <p>There are no events holding</p>
+
 
 </p>
 <%end%>
 
 <%= link_to"Create an event", new_event_path, class:"nav-link"%>
+
+

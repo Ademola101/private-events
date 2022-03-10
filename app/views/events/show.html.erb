@@ -22,10 +22,16 @@
 </ul>
 
 
- <div><p> Register for this event</p>
- <div> <% if user_signed_in? %>
+ <div>
+ <div> <% if user_signed_in?  %>
 
+ <div>
+<% if @event.registered?(current_user)%>
+<p>You have registered for this event</p>
+</div> <%else%>
+<p> Register for this event</p>
  <%= button_to 'Register', attendance_path(@event), method: 'put' %>
 </div>
+<%end%>
 <%end%>
 </div>
