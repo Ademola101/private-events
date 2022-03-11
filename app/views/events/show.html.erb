@@ -3,6 +3,7 @@
   <h3 class="display-5 text-capitalize"> <%= @event.title %> Event.</h3>
   <p class="lead">This event was created by <%= @event.organizer.name %>.</p>
   <p class="lead">It will take place at <%= @event.location %>.</p>
+  <p class="lead">on <%= @event.date %>.</p>
   <hr class="my-4">
   <p class="lead ml-5 ">
   <p class="font-weight-light display-4">Event Attendees.</p>
@@ -12,13 +13,15 @@
   </ul>
   <%end%>
   </div>
-  <% if user_signed_in? %>
+  <div> <% if user_signed_in?  %>
  <div>
-
- <div class="mx-5 font-italic">
- <p class=""> Register for this event</p>
+<% if @event.registered?(current_user)%>
+<p>You have registered for this event</p>
+</div> <%else%>
+<p> Register for this event</p>
  <%= button_to 'Register', attendance_path(@event), method: 'put', class:'btn btn-primary' %>
 </div>
 <%end%>
-  </p>
+<%end%>
 </div>
+ </p>

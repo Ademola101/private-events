@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!, :except => [:index]
 
   def new
     @event = Event.new
@@ -8,7 +9,7 @@ class EventsController < ApplicationController
     @event = current_user.organized_events.build(event_params)
     if @event.save
       flash[:success] = "Event created."
-      redirect_to current_user
+      redirect_to @event
     else
       render 'new'
     end
@@ -38,7 +39,7 @@ class EventsController < ApplicationController
 
   private
     def event_params
-      params.require(:event).permit(:title, :location)
+      params.require(:event).permit(:title, :location, :date)
     end
 
 end
