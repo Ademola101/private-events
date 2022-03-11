@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, :except => [:index]
+  before_action :authenticate_user!, except: [:index]
 
   def new
     @event = Event.new
@@ -8,7 +8,7 @@ class EventsController < ApplicationController
   def create
     @event = current_user.organized_events.build(event_params)
     if @event.save
-      flash[:success] = "Event created."
+      flash[:success] = 'Event created.'
       redirect_to @event
     else
       render 'new'
@@ -18,7 +18,6 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @attendee = @event.attendees
-   
   end
 
   def attendance
@@ -38,8 +37,8 @@ class EventsController < ApplicationController
   end
 
   private
-    def event_params
-      params.require(:event).permit(:title, :location, :date)
-    end
 
+  def event_params
+    params.require(:event).permit(:title, :location, :date)
+  end
 end
