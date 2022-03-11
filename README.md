@@ -1,4 +1,4 @@
-## Reformer
+## Private Events
 Private Event is an event creator app. The app creates an events after a form has been filled by the particular user, then the registered user will be able to register for an Event.
 ##### Prerequisites
 
@@ -11,7 +11,7 @@ The setups steps expect following tools installed on the system.
 ## 1. Check out the repository
 ```shell
 git clone [git@github.com:shadrxcc/private-events.git](https://github.com/shadrxcc/private-events)
-cd re-former
+cd Private-Events
 ```
 
 ## 2. Check your Ruby version
