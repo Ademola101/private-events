@@ -28,7 +28,7 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all
+    @events = Event.includes(:organizer)
   end
 
   private
