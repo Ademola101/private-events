@@ -1,31 +1,24 @@
-<h1>Event Page: <%= @event.title %></h1>
+<div class="jumbotron">
+  <h1 class=" text-capitalize text-center mt-0 mb-3 display-3 font-weight-bold"> Event Page </h1>
+  <h3 class="display-5 text-capitalize"> <%= @event.title %> Event.</h3>
+  <p class="lead">This event was created by <%= @event.organizer.name %>.</p>
+  <p class="lead">It will take place at <%= @event.location %>.</p>
+  <hr class="my-4">
+  <p class="lead ml-5 ">
+  <p class="font-weight-light display-4">Event Attendees.</p>
+  <div class="display-5"><% @attendee.each do |a| %> 
+  <ul style="list-style-type: circle;">
+  <li class="fw-3"> <%= a.name %> </li>
+  </ul>
+  <%end%>
+  </div>
+  <% if user_signed_in? %>
+ <div>
 
-<p>This event was created by <%= @event.organizer.email %>.</p>
-
-<h3>Event information:</h3>
-
-<ul>
-  <li><b>Event title:</b> <%= @event.title %></li>
-  <li><b>Event location:</b> <%= @event.location %></li>
-  
-  
-</ul>
-<h3>Event attendees:</h3>
-
-<ul>
-
-<div><% @attendee.each do |a| %> 
-<li> <%= a.email %> </li>
-<%end%>
-</div>
-
-</ul>
-
-
- <div><p> Register for this event</p>
- <div> <% if user_signed_in? %>
-
- <%= button_to 'Register', attendance_path(@event), method: 'put' %>
+ <div class="mx-5 font-italic">
+ <p class=""> Register for this event</p>
+ <%= button_to 'Register', attendance_path(@event), method: 'put', class:'btn btn-primary' %>
 </div>
 <%end%>
+  </p>
 </div>
