@@ -4,8 +4,8 @@
     These are your Featured Events
   </div>
    <div> <div class="card-header">  Your upcomming events </div>
-   <% if @upcomming_events%>
-    <% @upcomming_events.each do |event|%> 
+   <% if @upcoming_events%>
+    <% @upcoming_events.each do |event|%> 
   <div class="card-body">
     <h5 class="card-title"> Event title: <%= link_to event.title, event %> </h5>
     <p class="card-text"> To hold at <%= event.location %>, On the <%= event.date %>, Created @ <%= event.created_at %></p>
