@@ -1,16 +1,36 @@
 <div class="card text-center container">
+<div> <% if upcommig_and_past(@events)%>
   <div class="card-header">
     These are your Featured Events
   </div>
-   <div>
-    <% current_user.attended_events.each do |event|%> 
+   <div> <div class="card-header">  Your upcomming events </div>
+   <% if @upcomming_events%>
+    <% @upcomming_events.each do |event|%> 
+  <div class="card-body">
+    <h5 class="card-title"> Event title: <%= link_to event.title, event %> </h5>
+    <p class="card-text"> To hold at <%= event.location %>, On the <%= event.date %>, Created @ <%= event.created_at %></p>
+  </div>
+   <% end %>  
+   <%else%> 
+   <p class="card-body" > You have no upcoming events</p>
+   <% end %>   
+  
+  <% if @past_events %>
+  <p class="card-header"> Your past events</p>
+  <% @past_events.each do |event|%> 
   <div class="card-body">
     <h5 class="card-title"> Event title: <%= link_to event.title, event %> </h5>
     <p class="card-text"> To hold at <%= event.location %>, On the <%= event.date %>, Created @ <%= event.created_at %></p>
   </div>
    <% end %>   
-  <div class="card-footer text-muted">
+<%else%>
+   <p class = 'card-body'>
+   You have no past events
+   </p>
+   <% end %>   
+</div>
+<div class="card-footer text-muted">
     End
   </div>
-
+<%end%>
 </div>
