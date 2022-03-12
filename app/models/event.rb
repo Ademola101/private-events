@@ -9,7 +9,6 @@ class Event < ApplicationRecord
     !!attendees.find { |attendee| attendee.id == user.id }
   end
   current_date = Date.current
-
   scope :upcoming, -> { where("date >= current_date") }
   scope :past, -> { where("date < current_date")}
 end
