@@ -1,8 +1,6 @@
-<div class="card text-center container my-4">
+<div class="card text-center container my-4 ">
   <% if upcommig_and_past(@events)%>
-    <div class="card-header bg-secondary text-light">
-      These are your Featured Events
-    </div>
+    <div class="card-header bg-secondary text-light"> These are your Featured Events </div>
       <div class="row mt-3">
         <div class="col-6">
           <% if @upcoming_events%>
@@ -20,30 +18,23 @@
               <% else %>
                 <p class="card-body" > You have no upcoming events</p>
               <% end %>   
-  <% if @past_events %>
-    <div class="col-6">
-  <p class="card-header"> Your past events</p>
-  <% @past_events.each do |event|%> 
-
-    <div class="card my-3">
-    <div class="card-body">
-    <h5 class="card-title"> Event title: <%= link_to event.title, event %> </h5>
-    <p class="card-text">  To hold at <%= event.location %>, On the <%= event.date %></p>
-    <p  class="card-subtitle"> Created @ <%= event.created_at %> </p>
+                <% if @past_events %>
+                  <div class="col-6">
+                    <p class="card-header"> Your past events</p>
+                      <% @past_events.each do |event|%> 
+                        <div class="card my-3">
+                          <div class="card-body">
+                            <h5 class="card-title"> Event title: <%= link_to event.title, event %> </h5>
+                            <p class="card-text">  To hold at <%= event.location %>, On the <%= event.date %></p>
+                            <p class="card-subtitle"> Created @ <%= event.created_at %> </p>
+                          </div>
+                        </div>
+                      <% end %>
+                        <%else%>
+                          <p class = 'card-body'> You have no past events </p>
+                <% end %>
+      </div>
     </div>
-    </div>
-   <% end %>
-  <%else%>
-   <p class = 'card-body'>
-   You have no past events
-   </p>
-   <% end %>   
-</div>
-
-
-    </div>
-  <div class="card-footer text-muted">
-      End
-  </div>
+      <div class="card-footer text-muted"> End </div>
   <%end%>
 </div>
