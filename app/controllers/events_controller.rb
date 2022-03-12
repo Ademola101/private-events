@@ -28,6 +28,8 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.includes(:organizer)
+    @past_events = @events.past
+    @upcoming_events = @events.upcoming
   end
 
   def destroy

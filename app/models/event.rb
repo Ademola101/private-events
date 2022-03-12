@@ -8,6 +8,8 @@ class Event < ApplicationRecord
   def registered?(user)
     !!attendees.find { |attendee| attendee.id == user.id }
   end
-  scope :upcoming, -> { where("date > #{Date.current}") }
-  scope :past, -> { where("date < #{Date.current}") }
+  current_date = Date.current
+
+  scope :upcoming, -> { where("date >= current_date") }
+  scope :past, -> { where("date < current_date")}
 end
