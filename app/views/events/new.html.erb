@@ -1,18 +1,19 @@
-<h1><%= current_user.email %>, create a new event:</h1>
+<h1 class="mb-4"><%= current_user.name %>, create a new event:</h1>
 
 <div class="form">
   <%= form_for @event, url: {action: 'create'} do |f| %>
     
-
-    <%= f.label :title %>
-    <%= f.text_field :title, autofocus: true %><br>
+<div class="form-group">
+    <%= f.label :title, class:"form-label" %>
+    <%= f.text_field :title, autofocus: true, class:"form-control", placeholder:"Event title" %><br>
 
     <%= f.label :location %>
-    <%= f.text_field :location %><br>
+    <%= f.text_field :location, class:"form-control", placeholder:"Event Location" %><br>
     <%= f.label :date %>
-    <%= f.date_field :date, Value: Date.current %><br>
+    <%= f.date_field :date, Value: Date.current, class:"form-control" %><br>
 
-    <%= f.submit "Create Event" %>
+    <%= f.submit "Create Event", class:"btn btn-success" %>
+  </div>
   <% end %>
 </div>
 <%= link_to "Back", current_user %>
