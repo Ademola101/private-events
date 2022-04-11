@@ -1,5 +1,16 @@
 ## Private Events
 Private Event is an event creator app. The app creates an events after a form has been filled by the particular user, then the registered user will be able to register for an Event.
+
+
+* **Home page**
+![screenshot](/screenshot/home-page.png)
+
+* **Event page**
+![screenshot](/screenshot/Event-reg.png)
+
+* **My event**
+![screenshot](/screenshot/my-event.png)
+
 ##### Prerequisites
 
 The setups steps expect following tools installed on the system.
