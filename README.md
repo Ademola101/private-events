@@ -1,6 +1,6 @@
 ## Private Events
-Private Event is an event creator app. The app creates an events after a form has been filled by the particular user, then the registered user will be able to register for an Event.
 
+Private Event is an event creator app. The app creates an events after a form has been filled by the particular user, then the registered user will be able to register for an Event.
 
 * **Home page**
 ![screenshot](/screenshot/home-page.png)
@@ -11,15 +11,22 @@ Private Event is an event creator app. The app creates an events after a form ha
 * **My event**
 ![screenshot](/screenshot/my-event.png)
 
+### Live Demo
+
+[Live Demo link](https://first-private-event.herokuapp.com/)
+
+
+
 ##### Prerequisites
 
 The setups steps expect following tools installed on the system.
 
-- Github
-- Ruby [3.0.1](https://github.com/ruby/ruby/tree/ruby_3_1)
-- Rails [7.0.1](https://github.com/rails/rails/tree/v7.0.1)
+* Github
+* Ruby [3.0.1](https://github.com/ruby/ruby/tree/ruby_3_1)
+* Rails [7.0.1](https://github.com/rails/rails/tree/v7.0.1)
 
 ## 1. Check out the repository
+
 ```shell
 git clone [git@github.com:shadrxcc/private-events.git](https://github.com/shadrxcc/private-events)
 cd Private-Events
@@ -46,6 +53,7 @@ bundle && yarn
 ```shell
 rails db:create db:migrate db:seed
 ```
+
 ## 5. Start the server
 
 Start the server by running:
@@ -53,25 +61,27 @@ Start the server by running:
 ```ruby
 rails s
 ```
-Navigate to the new route http://127.0.0.1:3000
+
+Navigate to the new route <http://127.0.0.1:3000>
 
 ## Built With
 
-- Ruby
-- Ruby on Rails
+* Ruby
+* Ruby on Rails
 
 ## Authors
+
 👤 **Author 1**
 
-- GitHub: [@Ademola101](https://github.com/Ademola101)
-- Twitter: [@ademola_isr](https://twitter.com/ademola_isr)
-- LinkedIn: [Ademola Ogunmokun](https://linkedin.com/in/ademola-ogunmokun-492575203)
+* GitHub: [@Ademola101](https://github.com/Ademola101)
+* Twitter: [@ademola_isr](https://twitter.com/ademola_isr)
+* LinkedIn: [Ademola Ogunmokun](https://linkedin.com/in/ademola-ogunmokun-492575203)
 
 👤 **Author 2**
 
-- GitHub: [@YinkTech](https://github.com/yinktech)
-- Twitter: [@YinkTech](https://twitter.com/yinktech)
-- LinkedIn: [Ayeni Olayinka](https://www.linkedin.com/in/ayeni-olayinka-726181134/)
+* GitHub: [@YinkTech](https://github.com/yinktech)
+* Twitter: [@YinkTech](https://twitter.com/yinktech)
+* LinkedIn: [Ayeni Olayinka](https://www.linkedin.com/in/ayeni-olayinka-726181134/)
 
 👤 **Author 3**
 
@@ -88,4 +98,3 @@ Feel free to check the [issues page](https://github.com/shadrxcc/private-events/
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
