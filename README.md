@@ -1,7 +1,6 @@
 ## Private Events
 
-Private Event is an event creator app. The app creates an events after a form has been filled by the particular user, then the registered user will be able to register for an Event.
-
+Private Event is an event creator app. The app creates an event after a form has been filled out by the user. Registered users on the platform can signify their willingness to attend any future event on the platform. All the users can also view the participants of a particular event.
 * **Home page**
 ![screenshot](/screenshot/home-page.png)
 
