@@ -1,0 +1,26 @@
+<div class="jumbotron my-3">
+  <h1 class=" text-capitalize text-center mt-0 mb-3 display-3 font-weight-bold"> Event Page </h1>
+    <h3 class="display-5 text-capitalize"> <%= @event.title %> Event.</h3>
+      <p class="lead">This event was created by <%= @event.organizer.name %>.</p>
+        <p class="lead">It will take place at <%= @event.location %>.</p>
+          <p class="lead">on <%= @event.date %>.</p>
+            <hr class="my-4">
+              <div class="lead ml-5 ">
+                <p class="font-weight-light display-4">Event Attendees.</p>
+                  <div class="display-5">
+                    <% @attendee.each do |a| %> 
+                      <ul style="list-style-type: circle;">
+                        <li class="fw-3"> <%= a.name %> </li>
+                      </ul>
+                    <%end%>
+                  </div>
+                    <% if user_signed_in?  %>
+                      <% if @event.registered?(current_user)%>
+                        <p>You have registered for this event</p>
+                      <%else%>
+                        <p> Register for this event</p>
+                          <%= button_to 'Register', attendance_path(@event), method: 'put', class:'btn btn-primary' %>
+                      <%end%>
+                    <%end%>
+              </div>
+</div>
